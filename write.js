@@ -2,6 +2,9 @@ import util from "node:util";
 import fs from "node:fs";
 const path = "./test.txt";
 
+// using "a" and "as" flag to append
+// using "w" and "rs+" flag to overwrite
+
 /*
 fs.writeSync(fd, buffer[, options])                 // return bytes written
 fs.writeSync(fd, string[, position[, encoding]])    // return bytes written
