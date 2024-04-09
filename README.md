@@ -29,6 +29,15 @@
   - `writeFileAsync(path)`: write a file asynchronously with a callback function.
   - `writeFilePromise(path)`: write a file asynchronously with a promise.
 
+- `append.js` is similar to `write.js`, introducing 6 different functions to append files. It is exactly the same method, but with different file system flags (`a`/`as` instead of `w`/`rs+`).
+
+  - `appendStringSync(path, string)`: append string synchronously.
+  - `appendBufferSync(path, buf, offset)`: append buffer synchronously.
+  - `appendStringAsync(path, string)`: append string asynchronously.
+  - `appendBufferAsync(path, buf, offset)`: append buffer asynchronously.
+  - `appendStringPromise(path, string)`: append string asynchronously with a promise.
+  - `appendBufferPromise(path, buf, offset)`: append buffer asynchronously with a promise.
+
 - `appendFile.js` introduces 3 different ways to utilize `fs.appendFile()`. In contrast to `fs.writeFile()` and `fs.write()`, `fs.appendFile()` append file instead of overwritting it.
 
   - `appendFileSync(path, data)`: append a file synchronously.
