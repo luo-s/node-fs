@@ -1,10 +1,13 @@
 import fs from "node:fs";
 const path = "./test.txt";
 
-// fs.writeFileSync(file, data[, options])
-// fs.writeFile(file, data[, options], callback)
-// they can both take a string or buffer as data input
-// no offset option
+/*
+fs.writeFileSync(file, data[, options])
+fs.writeFile(file, data[, options], callback)
+they can take a string or buffer as data input
+no offset option
+*/
+
 const input = "OFFSET This file has been overwritten!";
 const string = input.slice(7);
 const buf = Buffer.from(input.slice(7), "utf8");
