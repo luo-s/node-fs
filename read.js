@@ -2,6 +2,14 @@ import util from "node:util";
 import fs from "node:fs";
 const path = "./test.txt";
 
+/*
+fs.readSync(fd, buffer[, options])          // return bytesRead
+fs.read(fd, buffer[, options], callback)
+
+options: offset, length, position
+callback: (err, bytesRead, buffer) => {}
+*/
+
 let filesize = fs.statSync(path).size;
 let buf = Buffer.alloc(filesize);
 
