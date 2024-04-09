@@ -14,6 +14,15 @@
   - `readFileAsync(path)`: read a file asynchronously with a callback function.
   - `readFilePromise(path)`: read a file asynchronously with a promise.
 
+- `write.js` introduces 6 different ways to utilize `fs.write()`. Half of them are dealing with writing string into files; the other half are dealing with writing buffer into files. Dealing with string is easier but writing buffer provides more customized options.
+
+  - `writeStringSync(path, string)`: write string synchronously.
+  - `writeBufferSync(path, buf, offset)`: write buffer synchronously.
+  - `writeStringAsync(path, string)`: write string asynchronously.
+  - `writeBufferAsync(path, buf, offset)`: write buffer asynchronously.
+  - `writeStringPromise(path, string)`: write string asynchronously with a promise.
+  - `writeBufferPromise(path, buf, offset)`: write buffer asynchronously with a promise.
+
 - `writeFile.js` introduces 3 different ways to utilize `fs.writeFile()`. In contrast to `fs.write()`, `fs.writeFile()` open and close file automatically.
 
   - `writeFileSync(path)`: write a file synchronously.
