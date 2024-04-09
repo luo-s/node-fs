@@ -1,8 +1,6 @@
 # Introduction
 
-- The node:fs module enables interacting with the file system in a way modeled on standard POSIX functions.
-
-- This is a simple tutorial for open, close, read, and write files using node's built-in module: fs.
+- This is a simple tutorial for open, close, read, and write files using node's built-in module: fs. The node:fs module enables interacting with the file system in a way modeled on standard POSIX functions.
 
 - `read.js` introduces 3 different ways to fs.read(). When using read.js(), we have to manually open and close a file (`file.open()`, `file.close()`).
 
