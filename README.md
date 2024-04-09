@@ -14,4 +14,10 @@
   - `readFileAsync(path)`: read a file asynchronously with a callback function.
   - `readFilePromise(path)`: read a file asynchronously with a promise.
 
-- `reset.js` resets test.txt file back to default ("This is a test.")
+- `writeFile.js` introduces 3 different ways to utilize `fs.writeFile()`. In contrast to `fs.write()`, `fs.writeFile()` open and close file automatically.
+
+  - `writeFileSync(path)`: write a file synchronously.
+  - `writeFileAsync(path)`: write a file asynchronously with a callback function.
+  - `writeFilePromise(path)`: write a file asynchronously with a promise.
+
+- `reset.js` resets test.txt file back to the default ("This is a test.")
