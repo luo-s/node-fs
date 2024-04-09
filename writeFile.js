@@ -4,8 +4,8 @@ const path = "./test.txt";
 /*
 fs.writeFileSync(file, data[, options])
 fs.writeFile(file, data[, options], callback)
-they can take a string or buffer as data input
-no offset option
+
+they both can take a string or buffer as data input
 */
 
 const input = "OFFSET This file has been overwritten!";
