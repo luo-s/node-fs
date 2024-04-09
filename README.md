@@ -44,4 +44,10 @@
   - `appendFileAsync(path, data)`: append a file asynchronously with a callback function.
   - `appendFilePromise(path, data)`: append a file asynchronously with a promise.
 
+- `stream.js` introduces async functions that read and write data streamingly (chunk by chunk). Reading and writing files could be stressful and potentially slow down the programming due to processing large files. It is important that processing large files streamingly, piece by piece, to improve memory efficiency and performance, and aviod block other tasks in the Node.js event loop. Also, streaming method in Node.js integrates seamlessly with piping machanisms.
+
+  - `readStream(path, chunkByte)`: read a file streamingly with a customized chuck size.
+  - `writeStream(source, destination, chunkByte)`: overwrite destination file with the source file streamingly, with a customized chunk size.
+  - `writeFromFile(source, destination)`: overwrite destination file with the source file streamingly with piping machanisms.
+
 - `reset.js` resets test.txt file back to the default ("This is a test.")
