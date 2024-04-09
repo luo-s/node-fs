@@ -13,3 +13,5 @@
   - `readFileSync(path)`: read a file synchronously.
   - `readFileAsync(path)`: read a file asynchronously with a callback function.
   - `readFilePromise(path)`: read a file asynchronously with a promise.
+
+- `reset.js` resets test.txt file back to default ("This is a test.")
