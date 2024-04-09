@@ -42,7 +42,7 @@ export var appendFilePromise = (path, data) => {
   fs.promises
     .appendFile(path, data, "utf8")
     .then(() => {
-      console.log("file overwritten!");
+      console.log("file appended!");
     })
     .catch((err) => {
       console.error(err);
