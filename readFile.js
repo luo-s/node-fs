@@ -1,6 +1,13 @@
 import fs, { readFile } from "node:fs";
 const path = "./test.txt";
 
+/*
+fs.readFileSync(path[, options])          // return content of path
+fs.readFile(path[, options], callback)
+options: encoding, flag
+callback: (err, data) => {}
+*/
+
 // readFile synchronously
 export var readFileSync = (path) => {
   console.log("\nfs.readFileSync() read synchronously");
