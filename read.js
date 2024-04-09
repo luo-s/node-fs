@@ -6,7 +6,7 @@ let filesize = fs.statSync(path).size;
 let buf = Buffer.alloc(filesize);
 
 // read synchronously
-export function readSync(path) {
+export var readSync = (path) => {
   console.log("\nfs.readSync() read synchronously");
   let fd = fs.openSync(path, "rs");
   console.log(`file (${fd}) opened!`);
@@ -15,11 +15,11 @@ export function readSync(path) {
   console.log(`content: ${buf.toString()}`);
   fs.closeSync(fd);
   console.log(`file (${fd}) close!`);
-}
+};
 readSync(path);
 
 // read asynchronously with promise
-export function readPromise(path) {
+export var readPromise = (path) => {
   console.log("\nRead Asynchronously With Promise");
   const open = util.promisify(fs.open);
   const read = util.promisify(fs.read);
@@ -34,11 +34,11 @@ export function readPromise(path) {
       });
     });
   });
-}
+};
 readPromise(path);
 
 // read asynchronously with callback
-export function readAsync(path) {
+export var readAsync = (path) => {
   console.log("\nRead Asynchronously");
   fs.open(path, "r", (err, fd) => {
     if (err) {
@@ -62,5 +62,5 @@ export function readAsync(path) {
       });
     }
   });
-}
+};
 readAsync(path);
