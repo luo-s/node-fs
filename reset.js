@@ -1,5 +1,4 @@
 import fs from "node:fs";
-// import { readSync } from "./read.js";
 const path = "./test.txt";
 const string = "This is a test.";
 
