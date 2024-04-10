@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "reset": "node reset.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "reset": "node reset/reset.js",
     "read": "node read.js",
     "readFile": "node readFile.js",
     "write": "node write.js",
@@ -16,5 +16,8 @@
     "stream": "node stream.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
