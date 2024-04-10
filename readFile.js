@@ -11,37 +11,42 @@ callback: (err, data) => {}
 // readFile synchronously
 export var readFileSync = (path) => {
   console.log("\nfs.readFileSync() read synchronously");
-  console.log("no need to open and close file");
   let data = fs.readFileSync(path, "utf8");
   console.log(`content: ${data}`);
+  return data;
 };
 readFileSync(path);
 
-// readFile with callback
-export var readFileAsync = (path) => {
-  console.log("\nfs.readFile() read asynchronously with callback");
-  console.log("no need to open and close file");
-  fs.readFile(path, "utf8", (err, data) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(`content: ${data}`);
-    }
-  });
-};
-readFileAsync(path);
-
 // readFile with promise
-export var readFilePromise = (path) => {
+export var readFilePromise = async (path) => {
   console.log("\nfs.promises.readFile() read asynchronously with promise");
-  console.log("no need to open and close file");
-  fs.promises
+  return fs.promises
     .readFile(path, "utf8")
     .then((data) => {
       console.log(`content: ${data}`);
+      return data;
     })
     .catch((err) => {
       console.error(err);
     });
 };
-readFilePromise(path);
+await readFilePromise(path);
+
+// readFile with callback
+export var readFileAsync = (path, callback) => {
+  console.log("\nfs.readFile() read asynchronously with callback");
+  fs.readFile(path, "utf8", (err, data) => {
+    if (err) {
+      callback(err, null); // return error to callback
+    } else {
+      callback(null, data); // pass the content to callback
+    }
+  });
+};
+readFileAsync(path, (err, data) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(`content: ${data}`);
+  }
+});

@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "reset": "node reset/reset.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --silent",
+    "reset": "node reset.js",
     "read": "node read.js",
     "readFile": "node readFile.js",
     "write": "node write.js",
