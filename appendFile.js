@@ -21,6 +21,21 @@ export var appendFileSync = (path, data) => {
 };
 appendFileSync(path, string);
 
+// appendFile asynchronously with promise
+export var appendFilePromise = async (path, data) => {
+  console.log("\nfs.promises.appendFile() append asynchronously with promise");
+  console.log("no need to open and close file");
+  return fs.promises
+    .appendFile(path, data, "utf8")
+    .then(() => {
+      console.log("file appended!");
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+await appendFilePromise(path, buf);
+
 // appendFile asynchronously
 export var appendFileAsync = (path, data) => {
   console.log("\nfs.appendFile() append asynchronously");
@@ -34,18 +49,3 @@ export var appendFileAsync = (path, data) => {
   });
 };
 appendFileAsync(path, buf);
-
-// appendFile asynchronously with promise
-export var appendFilePromise = (path, data) => {
-  console.log("\nfs.promises.appendFile() append asynchronously with promise");
-  console.log("no need to open and close file");
-  fs.promises
-    .appendFile(path, data, "utf8")
-    .then(() => {
-      console.log("file appended!");
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-};
-appendFilePromise(path, buf);

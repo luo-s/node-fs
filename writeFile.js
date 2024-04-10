@@ -21,6 +21,21 @@ export var writeFileSync = (path, data) => {
 };
 writeFileSync(path, string.slice(7));
 
+// writeFile with promise
+export var writeFilePromise = async (path, data) => {
+  console.log("\nfs.promises.writeFile() write asynchronously with promise");
+  console.log("no need to open and close file");
+  return fs.promises
+    .writeFile(path, data, "utf8")
+    .then(() => {
+      console.log("file overwritten!");
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+await writeFilePromise(path, buf);
+
 // writeFile asynchronously with callback
 export var writeFileAsync = (path, data) => {
   console.log("\nfs.writeFile() write asynchronously");
@@ -34,18 +49,3 @@ export var writeFileAsync = (path, data) => {
   });
 };
 writeFileAsync(path, buf);
-
-// writeFile with promise
-export var writeFilePromise = (path, data) => {
-  console.log("\nfs.promises.writeFile() write asynchronously with promise");
-  console.log("no need to open and close file");
-  fs.promises
-    .writeFile(path, data, "utf8")
-    .then(() => {
-      console.log("file overwritten!");
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-};
-writeFilePromise(path, buf);
