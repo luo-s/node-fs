@@ -51,3 +51,19 @@
   - `writeFromFile(source, destination)`: overwrite destination file with the source file streamingly with piping machanisms.
 
 - `reset.js` resets test.txt file back to the default ("This is a test.")
+
+# How to Use
+
+1. Fork the project in your repository.
+2. Clone the forked repo in your local system.
+3. Install the project.
+4. Now you are free to explore pre-written functions. You can either copy or customize your own node:fs functions.
+
+- `npm run read` will run `read.js` and read `test.txt` file.
+- `npm run readFile` will run `readFile.js` and read `test.txt` file.
+- `npm run write` will run `write.js` and write `test.txt` file.
+- `npm run writeFile` will run `writeFile.js` and write `test.txt` file.
+- `npm run append` will run `append.js` and append `test.txt` file.
+- `npm run appendFile` will run `appendFile.js` and append `test.txt` file.
+- `npm run stread` will run `stream.js`, read `stream.txt` and write it into `test.txt`.
+- `npm run reset` will reset `test.txt` back to default.
