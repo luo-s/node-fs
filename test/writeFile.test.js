@@ -32,7 +32,7 @@ describe("writeFilePromise", () => {
 });
 
 // test writeFileAsync
-describe("readFileAsync", () => {
+describe("wrireFileAsync", () => {
   test("should overwrite the content of file", (done) => {
     function callback(error, data) {
       if (error) {
